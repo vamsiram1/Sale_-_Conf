@@ -1,0 +1,91 @@
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 0 20px 0;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.leftBlock {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.backIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #000000;
+}
+
+.stepContainer {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stepLabel {
+  font-size: 12px;
+  color: #666666;
+  font-weight: 400;
+}
+
+.stepNumber {
+  font-size: 13px;
+  color: #6366F1;
+  font-weight: 700;
+}
+
+.progressBar {
+  width: 140px;
+  height: 4px;
+  background: #E5E7EB;
+  border-radius: 4px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #6366F1;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.rightBlock {
+  display: flex;
+  align-items: center;
+  background: #FFFBEB;
+  padding: 14px 20px;
+  border-radius: 8px;
+  gap: 32px;
+  border: 1px solid #FEF3C7;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 11px;
+  color: #6B7280;
+  font-weight: 400;
+}
+
+.value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+}

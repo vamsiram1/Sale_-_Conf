@@ -1,0 +1,28 @@
+.section {
+  margin-bottom: 35px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.formGrid3 {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 22px;
+}
