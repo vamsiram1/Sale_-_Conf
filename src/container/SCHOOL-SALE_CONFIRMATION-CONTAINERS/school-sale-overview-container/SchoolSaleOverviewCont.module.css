@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.contentContainer {
+  padding: 0;
+}
+
+.bottomActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 24px 0;
+  border-top: 1px solid #E5E7EB;
+}

@@ -18,7 +18,7 @@
 .button_wrapper .button.primary {
   background-color: #8b7aff;
   color: white ;
-  padding: 12px 24px;
+  padding: 10px 32px;
 }
 
 .button_wrapper .button.outline {
@@ -32,6 +32,7 @@
   background-color: white;
   color: #3425FF;
   border: 1px solid #3425FF;
+  padding: 10px 32px;
 }
 
 .button_wrapper button[type="submit"] {

@@ -1,0 +1,48 @@
+.wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.tabsContainer {
+  display: flex;
+  gap: 6px;
+  background: #ffffff;
+  border: 1.5px solid #d9d9d9;
+  padding: 6px;
+  border-radius: 50px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  font-size: 14px;
+  color: #555;
+  transition: 0.25s ease;
+}
+
+.tab:hover {
+  background: #f1f1f1;
+}
+
+.active {
+  background: #4338f2;
+  color: white;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  filter: grayscale(100%) brightness(0.4);
+  transition: 0.3s ease;
+}
+
+.activeIcon {
+  filter: brightness(5) invert(0);
+}
