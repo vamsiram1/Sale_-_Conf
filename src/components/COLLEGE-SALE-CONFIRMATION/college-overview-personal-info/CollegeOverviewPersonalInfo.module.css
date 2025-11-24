@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  gap: 42px;
+  padding: 28px 32px;
+  background: #f6f6f6;
+  border-radius: 6px;
+}
+
+.profileSection {
+  width: 200px;
+  text-align: center;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: auto;
+  border-radius: 50%;
+  border: 4px solid #d9d9d9;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editBtn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d40000;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.maxSize {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #d40000;
+}
+
+/* ----- RIGHT INFO SECTION ----- */
+.infoSection {
+  flex: 1;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Divider line */
+.title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #cfcfcf;
+  margin-left: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 22px;
+  column-gap: 45px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 14px;
+  color: #8b8b8b;
+  margin-bottom: 4px;
+}
+
+.field p {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}

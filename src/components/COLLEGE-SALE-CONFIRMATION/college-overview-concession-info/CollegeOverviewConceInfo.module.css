@@ -1,0 +1,47 @@
+.container {
+  padding: 20px 5px;
+}
+
+/* Title + line */
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #cfcfcf;
+  margin-left: 16px;
+}
+
+/* 4-column row */
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px;
+  row-gap: 22px;
+  margin-bottom: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 14px;
+  color: #8b8b8b;
+  margin-bottom: 4px;
+}
+
+.field p {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}

@@ -1,0 +1,8 @@
+.bottomActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 24px 0;
+  border-top: 1px solid #E5E7EB;
+}
