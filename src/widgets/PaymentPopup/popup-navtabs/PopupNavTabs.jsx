@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./SchoolPaymentPopupNavTabs.module.css";
+import styles from "./PopupNavTabs.module.css";
 
 const tabs = [
   { id: "cash", label: "Cash", icon: "💰" },
@@ -8,7 +8,7 @@ const tabs = [
   { id: "card", label: "Credit/Debit Card", icon: "💳" },
 ];
 
-const SchoolPaymentPopupNavTabs = ({ onChange }) => {
+const PopupNavTabs = ({ onChange }) => {
   const [active, setActive] = useState("cash");
 
   const handleClick = (id) => {
@@ -34,4 +34,4 @@ const SchoolPaymentPopupNavTabs = ({ onChange }) => {
   );
 };
 
-export default SchoolPaymentPopupNavTabs;
+export default PopupNavTabs;

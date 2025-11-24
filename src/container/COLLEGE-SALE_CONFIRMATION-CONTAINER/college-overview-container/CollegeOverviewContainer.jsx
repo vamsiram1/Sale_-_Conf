@@ -1,17 +1,20 @@
-import React from 'react'
-import CollegeOverviewPersonalInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-personal-info/CollegeOverviewPersonalInfo'
-import CollegeOverviewParentInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-parent-info/CollegeOverviewParentInfo'
-import CollegeOverviewSiblingInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-sibling-info/CollegeOverviewSiblingInfo'
-import CollegeOverviewOrientInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-orientation-info/CollegeOverviewOrientInfo'
-import CollegeOverviewAddressInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-address-info/CollegeOverviewAddressInfo'
-import CollegeOverviewConceInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-concession-info/CollegeOverviewConceInfo'
-import CollegeOverviewConWrtAppl from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-con-wrtn-appl/CollegeOverviewConWrtAppl'
-import Button from '../../../widgets/Button/Button'
-import styles from './CollegeOverviewContainer.module.css'
+import React from 'react';
+import CollegeOverviewPersonalInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-info/college-overview-personal-info/CollegeOverviewPersonalInfo';
+import CollegeOverviewParentInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-info/college-overview-parent-info/CollegeOverviewParentInfo';
+import CollegeOverviewSiblingInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-info/college-overview-sibling-info/CollegeOverviewSiblingInfo';
+import CollegeOverviewOrientInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-info/college-overview-orientation-info/CollegeOverviewOrientInfo';
+import CollegeOverviewAddressInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-info/college-overview-address-info/CollegeOverviewAddressInfo';
+import CollegeOverviewConceInfo from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-info/college-overview-concession-info/CollegeOverviewConceInfo';
+import CollegeOverviewConWrtAppl from '../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-info/college-overview-con-wrtn-appl/CollegeOverviewConWrtAppl';
+import ApplicationSaleAndConfTopSec from '../../../widgets/ApplicationSaleAndConTopSection/ApplicationSaleAndConfTopSec';
+import Button from '../../../widgets/Button/Button';
+import styles from './CollegeOverviewContainer.module.css';
 
 const CollegeOverviewContainer = ({ onNext, onEdit }) => {
   return (
     <div>
+      <ApplicationSaleAndConfTopSec step={1} title="Application Confirmation"/>
+      
       <CollegeOverviewPersonalInfo />
       <CollegeOverviewParentInfo />
       <CollegeOverviewSiblingInfo/>

@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
-import SchoolSaleOverviewCont from "../school-sale-overview-container/SchoolSaleOverviewCont";
-import SchoolSaleConfFormsCont from "../school-sale&conf-forms-container/SchoolSaleConfFormsCont";
-import PaymentPopupContainer from "../scool-payment-popup-container/PaymentPopupContainer";
+import React, { useState } from 'react';
+import CollegeOverviewContainer from '../college-overview-container/CollegeOverviewContainer';
+import CollegeAppConfContainer from '../college-app_conf-container/CollegeAppConfContainer';
+import PaymentPopup from '../../../widgets/PaymentPopup/whole-payment-popup/PaymentPopup';
 
-const SchoolSaleConfirmationContainer = () => {
-
-  const [currentStep, setCurrentStep] = useState(1); // 1 = Overview, 2 = Forms
+const CollegeSaleConfirmationContainer = () => {
+  const [currentStep, setCurrentStep] = useState(1); // 1 = Overview, 2 = Application Confirmation
   const [showPaymentPopup, setShowPaymentPopup] = useState(false);
 
   const handleNext = () => {
@@ -13,7 +12,6 @@ const SchoolSaleConfirmationContainer = () => {
   };
 
   const handleEdit = () => {
-    // Handle edit functionality
     console.log("Edit clicked");
   };
 
@@ -28,18 +26,19 @@ const SchoolSaleConfirmationContainer = () => {
   const handleClosePayment = () => {
     setShowPaymentPopup(false);
   };
+
   return (
     <div>
       <div>
         {currentStep === 1 && (
-          <SchoolSaleOverviewCont 
+          <CollegeOverviewContainer 
             onNext={handleNext}
             onEdit={handleEdit}
           />
         )}
         
         {currentStep === 2 && (
-          <SchoolSaleConfFormsCont 
+          <CollegeAppConfContainer 
             onBack={handleBack}
             onProceedToPayment={handleProceedToPayment}
           />
@@ -47,10 +46,10 @@ const SchoolSaleConfirmationContainer = () => {
       </div>
 
       {showPaymentPopup && (
-        <PaymentPopupContainer onClose={handleClosePayment} />
+        <PaymentPopup onClose={handleClosePayment} />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default SchoolSaleConfirmationContainer
+export default CollegeSaleConfirmationContainer;

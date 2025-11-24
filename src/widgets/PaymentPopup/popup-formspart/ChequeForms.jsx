@@ -1,9 +1,9 @@
 import React from "react";
-import Inputbox from "../../../../widgets/Inputbox/InputBox";
-import Dropdown from "../../../../widgets/Dropdown/Dropdown";
-import styles from "./SchoolPayementDDforms.module.css";
+import Inputbox from "../../Inputbox/InputBox";
+import Dropdown from "../../Dropdown/Dropdown";
+import styles from "./ChequeForms.module.css";
 
-const SchoolPayementDDforms = ({ formData, onChange }) => {
+const ChequeForms = ({ formData, onChange }) => {
   const orgOptions = ["Org 1", "Org 2", "Org 3"];
   const bankOptions = ["HDFC Bank", "ICICI Bank", "SBI Bank", "Axis Bank"];
   const branchOptions = ["Jubilee Hills", "Madhapur", "Gachibowli"];
@@ -11,22 +11,23 @@ const SchoolPayementDDforms = ({ formData, onChange }) => {
 
   return (
     <div className={styles.wrapper}>
+
       {/* ROW 1 */}
       <div className={styles.grid}>
         <Inputbox
           label="Payment Date *"
-          name="dd_paymentDate"
+          name="cheque_paymentDate"
           placeholder="MM/DD/YYYY"
-          value={formData.dd_paymentDate}
+          value={formData.cheque_paymentDate}
           onChange={onChange}
           type="date"
         />
 
         <Inputbox
           label="Amount *"
-          name="dd_amount"
+          name="cheque_amount"
           placeholder="Enter Amount (numbers only)"
-          value={formData.dd_amount}
+          value={formData.cheque_amount}
           onChange={onChange}
           type="number"
         />
@@ -36,17 +37,17 @@ const SchoolPayementDDforms = ({ formData, onChange }) => {
       <div className={styles.grid}>
         <Inputbox
           label="Pre Printed Receipt No *"
-          name="dd_receiptNo"
+          name="cheque_receiptNo"
           placeholder="Enter Pre Printed Receipt No"
-          value={formData.dd_receiptNo}
+          value={formData.cheque_receiptNo}
           onChange={onChange}
         />
 
         <Inputbox
-          label="DD Number *"
-          name="dd_number"
-          placeholder="Enter DD Number"
-          value={formData.dd_number}
+          label="Cheque Number *"
+          name="cheque_number"
+          placeholder="Enter Cheque Number"
+          value={formData.cheque_number}
           onChange={onChange}
         />
       </div>
@@ -54,19 +55,19 @@ const SchoolPayementDDforms = ({ formData, onChange }) => {
       {/* ROW 3 */}
       <div className={styles.grid}>
         <Inputbox
-          label="DD Date *"
-          name="dd_date"
+          label="Cheque Date *"
+          name="cheque_date"
           placeholder="MM/DD/YYYY"
-          value={formData.dd_date}
+          value={formData.cheque_date}
           onChange={onChange}
           type="date"
         />
 
         <Dropdown
           dropdownname="Organisation Name *"
-          name="dd_org"
+          name="cheque_org"
           results={orgOptions}
-          value={formData.dd_org}
+          value={formData.cheque_org}
           onChange={onChange}
         />
       </div>
@@ -75,17 +76,17 @@ const SchoolPayementDDforms = ({ formData, onChange }) => {
       <div className={styles.grid}>
         <Dropdown
           dropdownname="Bank Name *"
-          name="dd_bank"
+          name="cheque_bank"
           results={bankOptions}
-          value={formData.dd_bank}
+          value={formData.cheque_bank}
           onChange={onChange}
         />
 
         <Dropdown
           dropdownname="Branch Name *"
-          name="dd_branch"
+          name="cheque_branch"
           results={branchOptions}
-          value={formData.dd_branch}
+          value={formData.cheque_branch}
           onChange={onChange}
         />
       </div>
@@ -94,17 +95,17 @@ const SchoolPayementDDforms = ({ formData, onChange }) => {
       <div className={styles.grid}>
         <Inputbox
           label="IFSC Code *"
-          name="dd_ifsc"
+          name="cheque_ifsc"
           placeholder="Enter IFSC Code"
-          value={formData.dd_ifsc}
+          value={formData.cheque_ifsc}
           onChange={onChange}
         />
 
         <Dropdown
           dropdownname="City Name *"
-          name="dd_city"
+          name="cheque_city"
           results={cityOptions}
-          value={formData.dd_city}
+          value={formData.cheque_city}
           onChange={onChange}
         />
       </div>
@@ -113,16 +114,14 @@ const SchoolPayementDDforms = ({ formData, onChange }) => {
       <div className={styles.grid}>
         <Inputbox
           label="Remarks"
-          name="dd_remarks"
+          name="cheque_remarks"
           placeholder="Enter Remarks"
-          value={formData.dd_remarks}
+          value={formData.cheque_remarks}
           onChange={onChange}
         />
       </div>
-
-      
     </div>
   );
 };
 
-export default SchoolPayementDDforms;
+export default ChequeForms;

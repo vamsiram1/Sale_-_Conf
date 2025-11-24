@@ -1,8 +1,8 @@
 import React from "react";
-import Inputbox from "../../../../widgets/Inputbox/InputBox";
-import styles from "./SchoolPaymentCredDebitForms.module.css";
+import Inputbox from "../../Inputbox/InputBox";
+import styles from "./CardForms.module.css";
 
-const SchoolPaymentCredDebitForms = ({ formData, onChange }) => {
+const CardForms = ({ formData, onChange }) => {
 
   return (
     <div className={styles.wrapper}>
@@ -71,4 +71,4 @@ const SchoolPaymentCredDebitForms = ({ formData, onChange }) => {
   );
 };
 
-export default SchoolPaymentCredDebitForms;
+export default CardForms;

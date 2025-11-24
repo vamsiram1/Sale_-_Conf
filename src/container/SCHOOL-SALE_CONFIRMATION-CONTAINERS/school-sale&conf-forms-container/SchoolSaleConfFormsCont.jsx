@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SchoolOverviewTopSection from "../../../components/SCHOOL-SALE-CONFIRMATION/school-confirmation-overview-components/SchoolOverviewTopSectionComponent/SchoolOverviewTopSection";
+import SchoolOverviewTopSection from "../../../widgets/ApplicationSaleAndConTopSection/ApplicationSaleAndConfTopSec";
 import SchoolSaleConfParentInfo from "../../../components/SCHOOL-SALE-CONFIRMATION/school-sale-and-conformation-form/school-sale&conf-parent-information/SchoolSaleConfParentInfo";
 import SchoolSaleConfSiblingInfo from "../../../components/SCHOOL-SALE-CONFIRMATION/school-sale-and-conformation-form/school-sale&conf-sibling-info/SchoolSaleConfSiblingInfo";
 import Button from "../../../widgets/Button/Button";
@@ -77,7 +77,7 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment }) => {
 
   return (
     <div className={styles.container}>
-      <SchoolOverviewTopSection step={2} onBack={onBack} />
+      <SchoolOverviewTopSection step={2} onBack={onBack} title="Application Sale & Confirmation"/>
 
       <div className={styles.formContainer}>
         <SchoolSaleConfParentInfo 

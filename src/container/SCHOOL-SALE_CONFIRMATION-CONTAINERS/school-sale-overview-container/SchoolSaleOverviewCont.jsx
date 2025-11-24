@@ -1,5 +1,5 @@
 import React from "react";
-import SchoolOverviewTopSection from "../../../components/SCHOOL-SALE-CONFIRMATION/school-confirmation-overview-components/SchoolOverviewTopSectionComponent/SchoolOverviewTopSection";
+import SchoolOverviewTopSection from "../../../widgets/ApplicationSaleAndConTopSection/ApplicationSaleAndConfTopSec";
 import SchoolOverviewPersonalInformation from "../../../components/SCHOOL-SALE-CONFIRMATION/school-confirmation-overview-components/school-overview-personal-information/SchoolOverviewPersonalInformation";
 import SchoolOverviewParentInformation from "../../../components/SCHOOL-SALE-CONFIRMATION/school-confirmation-overview-components/school-overview-parent-information/SchoolOverviewParentInformation";
 import SchoolOverviewAddressInformation from "../../../components/SCHOOL-SALE-CONFIRMATION/school-confirmation-overview-components/school-overview-address-information/SchoolOverviewAddressInformation";
@@ -11,7 +11,7 @@ import styles from "./SchoolSaleOverviewCont.module.css";
 const SchoolSaleOverviewCont = ({ onNext, onEdit }) => {
   return (
     <div className={styles.container}>
-      <SchoolOverviewTopSection step={1} />
+      <SchoolOverviewTopSection step={1} title="Application Sale & Confirmation"  />
 
       <div className={styles.contentContainer}>
         <SchoolOverviewPersonalInformation />

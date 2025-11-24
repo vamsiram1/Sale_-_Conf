@@ -1,7 +1,7 @@
-import styles from "./SchoolOverviewTopSection.module.css";
-import backArrow from "../../../../assets/school-sale-conf-assets/backArrow.svg"; 
+import styles from "./ApplicationSaleAndConfTopSec.module.css";
+import backArrow from "../../assets/school-sale-conf-assets/backArrow.svg"; 
 
-const SchoolOverviewTopSection = ({ step = 1, onBack }) => {
+const SchoolOverviewTopSection = ({ step = 1, onBack,title,detailsObject }) => {
   const handleBackClick = () => {
     if (onBack) {
       onBack();
@@ -20,7 +20,7 @@ const SchoolOverviewTopSection = ({ step = 1, onBack }) => {
           style={{ cursor: onBack ? 'pointer' : 'default' }}
         />
         <div>
-          <h2 className={styles.title}>Application Sale & Confirmation</h2>
+          <h2 className={styles.title}>{title}</h2>
 
           <div className={styles.stepContainer}>
             <span className={styles.stepLabel}>Step:</span>

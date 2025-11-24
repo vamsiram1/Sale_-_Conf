@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./SchoolPaymentPopHeader.module.css";
+import styles from "./PopupHeader.module.css";
 
-const SchoolPaymentPopHeader = ({ step, onClose }) => {
+const PopupHeader = ({ step, onClose, title }) => {
   return (
     <div className={styles.headerContainer}>
       <div>
-        <h2 className={styles.title}>Complete Application Sale</h2>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.stepContainer}>
           <span className={styles.stepLabel}>Step:</span>
           <span className={styles.stepNumber}>{step}</span>
@@ -22,4 +22,4 @@ const SchoolPaymentPopHeader = ({ step, onClose }) => {
   );
 };
 
-export default SchoolPaymentPopHeader;
+export default PopupHeader;
