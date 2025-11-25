@@ -6,7 +6,7 @@ const CollegeOverviewPersonalInfo = () => {
     <div className={styles.container}>
       {/* ---- LEFT PROFILE SECTION ---- */}
       <div className={styles.profileSection}>
-        <div className={styles.avatarWrapper}>
+        {/* <div className={styles.avatarWrapper}>
           <img
             src="/student.png" 
             alt="Profile"
@@ -14,7 +14,7 @@ const CollegeOverviewPersonalInfo = () => {
           />
           <button className={styles.editBtn}>✎ Edit</button>
         </div>
-        <p className={styles.maxSize}>max image size is 300kb</p>
+        <p className={styles.maxSize}>max image size is 300kb</p> */}
       </div>
 
       {/* ---- INFORMATION SECTION ---- */}

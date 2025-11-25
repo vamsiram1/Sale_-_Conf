@@ -1,8 +1,7 @@
 .wrapper {
   margin-top: 25px;
-  max-height: 380px;
   overflow-y: auto;
-  padding-right: 6px;
+  padding:0 50px;
 }
 
 /* Two-column layout */

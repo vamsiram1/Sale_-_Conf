@@ -1,5 +1,7 @@
 .wrapper {
-  margin-top: 28px;
+  margin-top: 22px;
+ padding:0px 50px;
+
 }
 
 .grid {
@@ -7,4 +9,5 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 18px 24px;
   margin-bottom: 16px;
+  width:100%;
 }

@@ -11,6 +11,7 @@ const CardForms = ({ formData, onChange }) => {
       <div className={styles.topRow}>
         <label className={styles.checkboxRow}>
           <input
+            className={styles.checkboxInput}
             type="checkbox"
             name="card_proCredit"
             checked={formData.card_proCredit || false}
@@ -18,7 +19,7 @@ const CardForms = ({ formData, onChange }) => {
               onChange({ target: { name: "card_proCredit", value: e.target.checked } })
             }
           />
-          <span>PRO Credit Card</span>
+          <span className={styles.checkBoxLabel}>PRO Credit Card</span>
         </label>
 
         <div className={styles.concessionValueBox}>

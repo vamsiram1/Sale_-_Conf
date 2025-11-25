@@ -1,8 +1,8 @@
 .wrapper {
   margin-top: 25px;
-  max-height: 380px;
+  
   overflow-y: auto;
-  padding-right: 6px;
+  padding:0px 50px;
 }
 
 .grid {
@@ -10,6 +10,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 18px 22px;
   margin-bottom: 18px;
+  /* width:52%; */
 }
 
 .grid input,

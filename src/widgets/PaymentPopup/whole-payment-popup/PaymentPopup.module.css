@@ -12,7 +12,7 @@
 .modal {
   width: 90%;
   max-width: 900px;
-  min-height: 600px;
+  height: 85vh;
   max-height: 85vh;
   background: white;
   border-radius: 24px;
@@ -26,18 +26,35 @@
 .modalContent {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 8px;
-  margin-bottom: 20px;
+  min-height: 0;
+  max-height: 100%;
+}
+
+/* Custom scrollbar */
+.modalContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
 
 .footer {
-  padding: 20px 0 32px 0;
+  padding: 30px 0 20px 0;
   text-align: center;
   background: white;
-  border-top: 1px solid #E5E7EB;
-  position: sticky;
-  bottom: 0;
-  margin-top: auto;
 }
 
 .finishBtn {

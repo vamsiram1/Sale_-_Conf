@@ -1,8 +1,5 @@
 .container {
   display: flex;
-  gap: 42px;
-  padding: 28px 32px;
-  background: #f6f6f6;
   border-radius: 6px;
 }
 

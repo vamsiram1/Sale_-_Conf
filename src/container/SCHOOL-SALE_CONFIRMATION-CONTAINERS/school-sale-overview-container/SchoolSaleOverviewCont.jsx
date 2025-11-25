@@ -7,11 +7,16 @@ import SchoolOverviewAcademicInformation from "../../../components/SCHOOL-SALE-C
 import SchoolOverviewOrientaionInfo from "../../../components/SCHOOL-SALE-CONFIRMATION/school-confirmation-overview-components/school-overview-academic-info/SchoolOverviewOrientaionInfo";
 import Button from "../../../widgets/Button/Button";
 import styles from "./SchoolSaleOverviewCont.module.css";
+import EditIcon from "../../../assets/school-sale-conf-assets/EditIcon";
+import ButtonRightArrow from "../../../assets/school-sale-conf-assets/ButtonRightArrow";
 
 const SchoolSaleOverviewCont = ({ onNext, onEdit }) => {
   return (
     <div className={styles.container}>
-      <SchoolOverviewTopSection step={1} title="Application Sale & Confirmation"  />
+      <SchoolOverviewTopSection
+        step={1}
+        title="Application Sale & Confirmation"
+      />
 
       <div className={styles.contentContainer}>
         <SchoolOverviewPersonalInformation />
@@ -19,26 +24,21 @@ const SchoolSaleOverviewCont = ({ onNext, onEdit }) => {
         <SchoolOverviewAcademicInformation />
         <SchoolOverviewOrientaionInfo />
         <SchoolOverviewAddressInformation />
-        
-
-        {/* Bottom Action Buttons */}
-        <div className={styles.bottomActions}>
-          <Button
-            buttonname="Edit"
-            variant="secondary"
-            onClick={onEdit}
-          />
-          <Button
-            buttonname="Next"
-            righticon={
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            }
-            variant="primary"
-            onClick={onNext}
-          />
-        </div>
+      </div>
+      {/* Bottom Action Buttons */}
+      <div className={styles.bottomActions}>
+        <Button
+          buttonname="Edit"
+          variant="secondary"
+          onClick={onEdit}
+          lefticon={<EditIcon/>}
+        />
+        <Button
+          buttonname="Next"
+          righticon={<ButtonRightArrow />}
+          variant="primary"
+          onClick={onNext}
+        />
       </div>
     </div>
   );

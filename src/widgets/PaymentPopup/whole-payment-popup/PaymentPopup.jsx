@@ -32,11 +32,11 @@ const PaymentPopup = ({ onClose,title }) => {
     <div className={styles.overlay}>
       <div className={styles.modal}>
         
+        <PopupHeader step={3} onClose={onClose} title={title} />
+
+        <PopupNavTabs onChange={handleTabChange} />
+
         <div className={styles.modalContent}>
-          <PopupHeader step={3} onClose={onClose} title={title} />
-
-          <PopupNavTabs onChange={handleTabChange} />
-
           {activeTab === "cash" && (
             <CashForms formData={formData} onChange={handleFormChange} />
           )}
@@ -52,19 +52,19 @@ const PaymentPopup = ({ onClose,title }) => {
           {activeTab === "card" && (
             <CardForms formData={formData} onChange={handleFormChange} />
           )}
-        </div>
 
-        <div className={styles.footer}>
-          <Button
-            buttonname="Finish Sale & Confirmation"
-            righticon={
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            }
-            variant="primary"
-            onClick={handleFinishSale}
-          />
+          <div className={styles.footer}>
+            <Button
+              buttonname="Finish Sale & Confirmation"
+              righticon={
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              }
+              variant="primary"
+              onClick={handleFinishSale}
+            />
+          </div>
         </div>
 
       </div>

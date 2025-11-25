@@ -3,6 +3,8 @@ import Inputbox from "../../../../widgets/Inputbox/InputBox";
 import Dropdown from "../../../../widgets/Dropdown/Dropdown";
 import Button from "../../../../widgets/Button/Button";
 import styles from "./SchoolSaleConfSiblingInfo.module.css";
+import UploadIcon from "../../../../assets/school-sale-conf-assets/UploadIcon";
+import PlusIcon from "../../../../assets/school-sale-conf-assets/PlusIcon";
 
 const SchoolSaleConfSiblingInfo = ({
   formData,
@@ -82,12 +84,15 @@ const SchoolSaleConfSiblingInfo = ({
           buttonname="Upload Annexure"
           variant="secondary"
           onClick={onUploadAnnexure}
+          lefticon={<UploadIcon/>}
+          
         />
 
         <Button
           buttonname="Add Another Sibling"
           variant="outline"
           onClick={onAddSibling}
+          lefticon={<PlusIcon/>}
         />
       </div>
     </div>

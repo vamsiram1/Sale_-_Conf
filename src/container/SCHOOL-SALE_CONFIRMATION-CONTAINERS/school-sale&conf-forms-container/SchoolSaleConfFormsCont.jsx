@@ -7,6 +7,7 @@ import styles from "./SchoolSaleConfFormsCont.module.css";
 import SchoolSaleConfAcadeInfo from "../../../components/SCHOOL-SALE-CONFIRMATION/school-sale-and-conformation-form/school-sale&conf-academic-info/SchoolSaleConfAcadeInfo";
 import SchoolSaleConfLangInfo from "../../../components/SCHOOL-SALE-CONFIRMATION/school-sale-and-conformation-form/school-sale&conf-language-info/SchoolSaleConfLangInfo";
 import SchoolSaleConfConceInfo from "../../../components/SCHOOL-SALE-CONFIRMATION/school-sale-and-conformation-form/school-sale&conf-concestion-info/SchoolSaleConfConceInfo";
+import ButtonRightArrow from "../../../assets/school-sale-conf-assets/ButtonRightArrow";
 
 const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment }) => {
   const [formData, setFormData] = useState({
@@ -112,9 +113,7 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment }) => {
           <Button
             buttonname="Proceed to payment"
             righticon={
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ButtonRightArrow/>
             }
             variant="primary"
             width="220px"

@@ -8,21 +8,23 @@ const SchoolOverviewPersonalInformation = () => {
       {/* LEFT: Profile Image */}
       <div className={styles.leftBlock}>
         <div className={styles.imageWrapper}>
-          <img
+          {/* <img
             src="https://via.placeholder.com/150"
             alt="profile"
             className={styles.profileImg}
           />
-
           <button className={styles.editBtn}>✎ Edit</button>
 
-          <span className={styles.maxSizeText}>max image size is 300kb</span>
+          <span className={styles.maxSizeText}>max image size is 300kb</span> */}
         </div>
       </div>
 
       {/* RIGHT: Personal Information */}
       <div className={styles.rightBlock}>
-        <div className={styles.sectionTitle}>Personal Information</div>
+        <div className={styles.headerRow}>
+          <span className={styles.sectionTitle}>Personal Information</span>
+          <div className={styles.line}></div>
+        </div>
 
         <div className={styles.infoGrid}>
           {/* ROW 1 */}

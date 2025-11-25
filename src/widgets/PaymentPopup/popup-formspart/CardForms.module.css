@@ -1,25 +1,32 @@
 .wrapper {
   margin-top: 25px;
+  padding: 0 50px;
 }
 
-/* Top row: checkbox + concession value */
 .topRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
 }
 
+.checkboxInput {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+}
 .checkboxRow {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 15px;
-  font-weight: 500;
+  cursor: pointer;
+  color:#667085;
 }
 
 .concessionValueBox {
-  text-align: right;
+  text-align: center;
+ 
 }
 
 .concessionValue {
@@ -29,12 +36,11 @@
 
 .concessionLabel {
   margin: 0;
-  margin-top: -6px;
+  margin-top: 1px;
   font-size: 12px;
   color: #667085;
 }
 
-/* 2-column grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
