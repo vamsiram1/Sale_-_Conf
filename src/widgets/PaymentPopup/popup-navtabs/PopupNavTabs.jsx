@@ -21,7 +21,9 @@ const PopupNavTabs = ({ onChange }) => {
 
   return (
     <div className={styles.wrapper}>
+     <p className={styles.paymentModeText}>Select Payment Mode</p>
       <div className={styles.tabsContainer}>
+         
         {tabs.map((tab) => (
           <button
             key={tab.id}

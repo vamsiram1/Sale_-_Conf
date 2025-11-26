@@ -1,7 +1,16 @@
 .wrapper {
-  margin-top: 30px;
+  margin-bottom:18px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.paymentModeText {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3C3C3C;
 }
 
 .tabsContainer {

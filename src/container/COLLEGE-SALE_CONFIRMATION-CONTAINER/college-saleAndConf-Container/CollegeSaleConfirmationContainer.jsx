@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CollegeOverviewContainer from "../college-overview-container/CollegeOverviewContainer";
 import CollegeAppConfContainer from "../college-app_conf-container/CollegeAppConfContainer";
-import PaymentPopup from "../../../widgets/PaymentPopup/whole-payment-popup/PaymentPopup";
+import CollegePaymentPopup from "../college-payment-popup-container/CollegePaymentPopup";
 
 const CollegeSaleConfirmationContainer = () => {
   const [currentStep, setCurrentStep] = useState(1); // 1 = Overview, 2 = Application Confirmation
@@ -42,7 +42,7 @@ const CollegeSaleConfirmationContainer = () => {
         )}
       </div>
 
-      {showPaymentPopup && <PaymentPopup onClose={handleClosePayment} />}
+      {showPaymentPopup && <CollegePaymentPopup onClose={handleClosePayment} />}
     </div>
   );
 };
