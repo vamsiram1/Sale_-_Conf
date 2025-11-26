@@ -3,51 +3,49 @@ import styles from "./CollegeOverviewConceInfo.module.css";
 
 const CollegeOverviewConceInfo = () => {
   return (
-    <div className={styles.container}>
-      <h3 className={styles.title}>Concession Information</h3>
-
-      {/* ROW 1 */}
-      <div className={styles.row}>
-        <div className={styles.field}>
-          <label>1st Year Concession</label>
-          <p>10,000</p>
-        </div>
-
-        <div className={styles.field}>
-          <label>2nd Year Concession</label>
-          <p>10,000</p>
-        </div>
-
-        <div className={styles.field}>
-          <label>3rd Year Concession</label>
-          <p>10,000</p>
-        </div>
-
-        <div className={styles.field}>
-          <label>Given By</label>
-          <p>Vamsi Ramana</p>
-        </div>
+    <div className={styles.wrapper}>
+      {/* Title + Divider */}
+      <div className={styles.headerRow}>
+        <span className={styles.title}>Concession Information</span>
+        <div className={styles.line}></div>
       </div>
 
-      {/* ROW 2 */}
-      <div className={styles.row}>
-        <div className={styles.field}>
-          <label>Description</label>
-          <p>Loreum Ipsum</p>
+      {/* GRID */}
+      <div className={styles.infoGrid}>
+        <div className={styles.infoItem}>
+          <span className={styles.label}>1st Year Concession</span>
+          <span className={styles.value}>10,000</span>
         </div>
 
-        <div className={styles.field}>
-          <label>Authorized By</label>
-          <p>Shashank</p>
+        <div className={styles.infoItem}>
+          <span className={styles.label}>2nd Year Concession</span>
+          <span className={styles.value}>10,000</span>
         </div>
 
-        <div className={styles.field}>
-          <label>Reason</label>
-          <p>Special Concession</p>
+        <div className={styles.infoItem}>
+          <span className={styles.label}>3rd Year Concession</span>
+          <span className={styles.value}>10,000</span>
         </div>
 
-        {/* 4th empty column for alignment */}
-        <div></div>
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Given By</span>
+          <span className={styles.value}>Vamsi Ramana</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Description</span>
+          <span className={styles.value}>Loreum Ipsum</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Authorized By</span>
+          <span className={styles.value}>Shashank</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Reason</span>
+          <span className={styles.value}>Special Concession</span>
+        </div>
       </div>
     </div>
   );

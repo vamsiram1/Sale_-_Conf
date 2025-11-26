@@ -3,73 +3,76 @@ import styles from "./CollegeOverviewPersonalInfo.module.css";
 
 const CollegeOverviewPersonalInfo = () => {
   return (
-    <div className={styles.container}>
-      {/* ---- LEFT PROFILE SECTION ---- */}
-      <div className={styles.profileSection}>
-        {/* <div className={styles.avatarWrapper}>
-          <img
+    <div className={styles.wrapper}>
+      {/* LEFT: Profile Image */}
+      <div className={styles.leftBlock}>
+        <div className={styles.imageWrapper}>
+          {/* <img
             src="/student.png" 
             alt="Profile"
-            className={styles.avatar}
+            className={styles.profileImg}
           />
           <button className={styles.editBtn}>✎ Edit</button>
+          <span className={styles.maxSizeText}>max image size is 300kb</span> */}
         </div>
-        <p className={styles.maxSize}>max image size is 300kb</p> */}
       </div>
 
-      {/* ---- INFORMATION SECTION ---- */}
-      <div className={styles.infoSection}>
-        <h3 className={styles.title}>Personal Information</h3>
+      {/* RIGHT: Personal Information */}
+      <div className={styles.rightBlock}>
+        <div className={styles.headerRow}>
+          <span className={styles.sectionTitle}>Personal Information</span>
+          <div className={styles.line}></div>
+        </div>
 
-        <div className={styles.grid}>
-          <div className={styles.field}>
-            <label>PRO Receipt No</label>
-            <p>0</p>
+        <div className={styles.infoGrid}>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>PRO Receipt No</span>
+            <span className={styles.value}>0</span>
           </div>
 
-          <div className={styles.field}>
-            <label>First Name</label>
-            <p>First Name</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>First Name</span>
+            <span className={styles.value}>First Name</span>
           </div>
 
-          <div className={styles.field}>
-            <label>Last Name</label>
-            <p>Last Name</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>Last Name</span>
+            <span className={styles.value}>Last Name</span>
           </div>
 
-          <div className={styles.field}>
-            <label>Gender</label>
-            <p>Male</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>Gender</span>
+            <span className={styles.value}>Male</span>
           </div>
 
-          <div className={styles.field}>
-            <label>Aapar No</label>
-            <p>9828e77</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>Aapar No</span>
+            <span className={styles.value}>9828e77</span>
           </div>
 
-          <div className={styles.field}>
-            <label>Date of Birth</label>
-            <p>07-12-2004</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>Date of Birth</span>
+            <span className={styles.value}>07-12-2004</span>
           </div>
 
-          <div className={styles.field}>
-            <label>Admission Referred by</label>
-            <p>Venkat Boppana</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>Admission Referred by</span>
+            <span className={styles.value}>Venkat Boppana</span>
           </div>
 
-          <div className={styles.field}>
-            <label>Quota</label>
-            <p>General</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>Quota</span>
+            <span className={styles.value}>General</span>
           </div>
 
-          <div className={styles.field}>
-            <label>Aadhar Card No</label>
-            <p>8892 2898 6273</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>Aadhar Card No</span>
+            <span className={styles.value}>8892 2898 6273</span>
           </div>
 
-          <div className={styles.field}>
-            <label>PRO Receipt No</label>
-            <p>6274528362yrts729</p>
+          <div className={styles.infoItem}>
+            <span className={styles.label}>PRO Receipt No</span>
+            <span className={styles.value}>6274528362yrts729</span>
           </div>
         </div>
       </div>

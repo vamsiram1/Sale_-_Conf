@@ -9,6 +9,7 @@ import CollegeOverviewConWrtAppl from "../../../components/COLLEGE-SALE-CONFIRMA
 import ApplicationSaleAndConfTopSec from "../../../widgets/ApplicationSaleAndConTopSection/ApplicationSaleAndConfTopSec";
 import Button from "../../../widgets/Button/Button";
 import styles from "./CollegeOverviewContainer.module.css";
+import EditIcon from "../../../assets/school-sale-conf-assets/EditIcon";
 import ButtonRightArrow from "../../../assets/school-sale-conf-assets/ButtonRightArrow";
 const CollegeOverviewContainer = ({ onNext, onEdit }) => {
   return (
@@ -22,17 +23,21 @@ const CollegeOverviewContainer = ({ onNext, onEdit }) => {
         <CollegeOverviewAddressInfo />
         <CollegeOverviewConceInfo />
         <CollegeOverviewConWrtAppl />
-
-        {/* Bottom Action Buttons */}
-        <div className={styles.bottomActions}>
-          <Button buttonname="Edit" variant="secondary" onClick={onEdit} />
-          <Button
-            buttonname="Next"
-            righticon={<ButtonRightArrow />}
-            variant="primary"
-            onClick={onNext}
-          />
-        </div>
+      </div>
+      {/* Bottom Action Buttons */}
+      <div className={styles.bottomActions}>
+        <Button
+          buttonname="Edit"
+          variant="secondary"
+          onClick={onEdit}
+          lefticon={<EditIcon />}
+        />
+        <Button
+          buttonname="Next"
+          righticon={<ButtonRightArrow />}
+          variant="primary"
+          onClick={onNext}
+        />
       </div>
     </div>
   );

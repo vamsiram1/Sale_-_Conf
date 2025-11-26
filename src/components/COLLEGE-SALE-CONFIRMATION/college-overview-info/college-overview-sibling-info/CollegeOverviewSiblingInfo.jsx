@@ -3,37 +3,38 @@ import styles from "./CollegeOverviewSiblingInfo.module.css";
 
 const CollegeOverviewSiblingInfo = () => {
   return (
-    <div className={styles.container}>
-      <h3 className={styles.title}>Sibling Information</h3>
-
-      {/* ROW 1 */}
-      <div className={styles.row}>
-        <div className={styles.field}>
-          <label>Full Name</label>
-          <p>Anil Londonker Sinka</p>
-        </div>
-
-        <div className={styles.field}>
-          <label>Relation Type</label>
-          <p>Brother</p>
-        </div>
-
-        <div className={styles.field}>
-          <label>Class</label>
-          <p>8</p>
-        </div>
-
-        <div className={styles.field}>
-          <label>School</label>
-          <p>Sri Chaitanya Schools</p>
-        </div>
+    <div className={styles.wrapper}>
+      {/* Title + line */}
+      <div className={styles.headerRow}>
+        <span className={styles.title}>Sibling Information</span>
+        <div className={styles.line}></div>
       </div>
 
-      {/* ROW 2 - ONLY ONE FIELD (Gender) */}
-      <div className={styles.rowSingle}>
-        <div className={styles.field}>
-          <label>Gender</label>
-          <p>Male</p>
+      {/* Content grid */}
+      <div className={styles.infoGrid}>
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Full Name</span>
+          <span className={styles.value}>Anil Londonker Sinka</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Relation Type</span>
+          <span className={styles.value}>Brother</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Class</span>
+          <span className={styles.value}>8</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>School</span>
+          <span className={styles.value}>Sri Chaitanya Schools</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Gender</span>
+          <span className={styles.value}>Male</span>
         </div>
       </div>
     </div>

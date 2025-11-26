@@ -1,11 +1,11 @@
 import React from "react";
-import Inputbox from "../../../widgets/Inputbox/InputBox";
-import Dropdown from "../../../widgets/Dropdown/Dropdown";
-import styles from "./CollegeAppliConf.module.css";
+import Inputbox from "../../../../widgets/Inputbox/InputBox";
+import Dropdown from "../../../../widgets/Dropdown/Dropdown";
+import styles from "./CollegeAcademicConfForms.module.css";
 
-const ConformAcademicInfo = () => {
+const CollegeAcademicConfForms = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.section}>
       {/* Title */}
       <div className={styles.headerRow}>
         <span className={styles.title}>Conform Academic Information</span>
@@ -14,6 +14,14 @@ const ConformAcademicInfo = () => {
 
       <div className={styles.grid}>
         {/* Orientation Batch */}
+
+        <Inputbox
+          label="Academic Year"
+          name="academicYear"
+          placeholder="Academic year"
+        />
+
+
         <Dropdown
           dropdownname="Orientation Batch"
           name="orientationBatch"
@@ -96,4 +104,4 @@ const ConformAcademicInfo = () => {
   );
 };
 
-export default ConformAcademicInfo;
+export default CollegeAcademicConfForms;

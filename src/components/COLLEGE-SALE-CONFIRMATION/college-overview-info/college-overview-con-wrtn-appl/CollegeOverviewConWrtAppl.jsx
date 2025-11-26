@@ -3,23 +3,28 @@ import styles from "./CollegeOverviewConWrtAppl.module.css";
 
 const CollegeOverviewConWrtAppl = () => {
   return (
-    <div className={styles.container}>
-      <h3 className={styles.title}>Concession Written On Application</h3>
+    <div className={styles.wrapper}>
+      {/* Title + Divider */}
+      <div className={styles.headerRow}>
+        <span className={styles.title}>Concession Written On Application</span>
+        <div className={styles.line}></div>
+      </div>
 
-      <div className={styles.row}>
-        <div className={styles.field}>
-          <label>Concession Amount</label>
-          <p>10,000</p>
+      {/* GRID */}
+      <div className={styles.infoGrid}>
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Concession Amount</span>
+          <span className={styles.value}>10,000</span>
         </div>
 
-        <div className={styles.field}>
-          <label>Concession Written By</label>
-          <p>Shashank</p>
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Concession Written By</span>
+          <span className={styles.value}>Shashank</span>
         </div>
 
-        <div className={styles.field}>
-          <label>Reason</label>
-          <p>Special Concession</p>
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Reason</span>
+          <span className={styles.value}>Special Concession</span>
         </div>
       </div>
     </div>

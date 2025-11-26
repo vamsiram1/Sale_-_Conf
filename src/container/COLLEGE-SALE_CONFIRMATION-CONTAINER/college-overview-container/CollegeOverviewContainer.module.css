@@ -1,12 +1,14 @@
-.container{
-  border-radius:6px;
-  padding:22px;
-  background-color: #FFFFFF;
+.container {
+  width: 100%;
+  border-radius: 6px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 1);
 }
-.overviewContainer{
+
+.overviewContainer {
+  padding: 15px;
   background-color: #F8F8F8;
-  border-radius: 12px ;
-  padding:15px;
+  border-radius: 12px;
 }
 
 .bottomActions {
@@ -14,6 +16,5 @@
   gap: 16px;
   justify-content: center;
   margin-top: 50px;
-  /* padding: 20px 0; */
-
+  padding: 20px 0;
 }
