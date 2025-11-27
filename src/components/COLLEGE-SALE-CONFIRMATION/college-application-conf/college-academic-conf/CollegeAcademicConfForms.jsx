@@ -8,96 +8,68 @@ const CollegeAcademicConfForms = () => {
     <div className={styles.section}>
       {/* Title */}
       <div className={styles.headerRow}>
-        <span className={styles.title}>Conform Academic Information</span>
+        <span className={styles.title}>Orientation Information</span>
         <div className={styles.line}></div>
       </div>
 
       <div className={styles.grid}>
-        {/* Orientation Batch */}
-
+        {/* Row 1: Academic Year, City, Branch */}
         <Inputbox
           label="Academic Year"
           name="academicYear"
-          placeholder="Academic year"
+          placeholder="Academic Year"
         />
-
 
         <Dropdown
-          dropdownname="Orientation Batch"
-          name="orientationBatch"
-          results={["Batch 1", "Batch 2", "Batch 3"]}
+          dropdownname="City"
+          name="city"
+          results={["Hyderabad", "Bangalore", "Chennai", "Mumbai"]}
         />
 
-        {/* Orientation Dates */}
+        <Dropdown
+          dropdownname="Branch"
+          name="branch"
+          results={["Branch 1", "Branch 2", "Branch 3"]}
+        />
+
+        {/* Row 2: Joining Class, Course Name, Student Type */}
+        <Dropdown
+          dropdownname="Joining Class"
+          name="joiningClass"
+          results={["Class 1", "Class 2", "Class 3"]}
+        />
+
+        <Dropdown
+          dropdownname="Course Name"
+          name="courseName"
+          results={["Course 1", "Course 2", "Course 3"]}
+        />
+
+        <Dropdown
+          dropdownname="Student Type"
+          name="studentType"
+          results={["Day Scholar", "Hostel", "Semi Residential"]}
+        />
+
+        {/* Row 3: Course Start Date, Course End Date, Course Fee */}
         <Inputbox
-          label="Orientation Dates"
-          name="orientationDates"
+          label="Course Start Date"
+          name="courseStartDate"
+          placeholder="Course Start Date"
           type="date"
         />
 
-        {/* Orientation Fee */}
         <Inputbox
-          label="Orientation Fee"
-          name="orientationFee"
-          placeholder="0.0"
+          label="Course End Date"
+          name="courseEndDate"
+          placeholder="Course End Date"
+          type="date"
         />
 
-        {/* School State */}
-        <Dropdown
-          dropdownname="School State"
-          name="schoolState"
-          results={["Telangana", "Andhra Pradesh", "Karnataka", "Tamil Nadu"]}
-        />
-
-        {/* School District */}
-        <Dropdown
-          dropdownname="School District"
-          name="schoolDistrict"
-          results={["Hyderabad", "Rangareddy", "Medchal", "Sangareddy"]}
-        />
-
-        {/* School Type */}
-        <Dropdown
-          dropdownname="School Type"
-          name="schoolType"
-          results={["SSC", "CBSE", "ICSE", "IB"]}
-        />
-
-        {/* School Name */}
         <Inputbox
-          label="School Name"
-          name="schoolName"
-          placeholder="Enter name of the school"
-        />
-
-        {/* Additional Orientation Fee */}
-        <Inputbox
-          label="Additional Orientation Fee"
-          name="additionalOrientationFee"
-          placeholder="Orientation fee"
-        />
-
-        {/* Score App No */}
-        <Inputbox
-          label="Score App NO"
-          name="scoreAppNo"
-          placeholder="Enter score app No"
-        />
-
-        {/* Marks */}
-        <Inputbox label="Marks" name="marks" placeholder="Enter marks" />
-
-        {/* Food Type */}
-        <Dropdown
-          dropdownname="Food Type"
-          name="foodType"
-          results={["Veg", "Non-Veg", "Both"]}
-        />
-        {/* Blood Group */}
-        <Dropdown
-          dropdownname="Blood Group"
-          name="bloodGroup"
-          results={["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]}
+          label="Course Fee"
+          name="courseFee"
+          placeholder="Course Fee"
         />
       </div>
     </div>

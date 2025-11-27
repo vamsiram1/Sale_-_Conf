@@ -1,7 +1,8 @@
 import styles from "./ApplicationSaleAndConfTopSec.module.css";
 import backArrow from "../../assets/school-sale-conf-assets/backArrow.svg"; 
 
-const SchoolOverviewTopSection = ({ step = 1, onBack,title,detailsObject }) => {
+const ApplicationSaleAndConfTopSec = ({ step = 1, onBack, title, detailsObject }) => {
+ 
   const handleBackClick = () => {
     if (onBack) {
       onBack();
@@ -39,27 +40,27 @@ const SchoolOverviewTopSection = ({ step = 1, onBack,title,detailsObject }) => {
       <div className={styles.rightBlock}>
         <div className={styles.infoItem}>
           <span className={styles.label}>Academic Year</span>
-          <span className={styles.value}>2026-2027</span>
+          <span className={styles.value}>{detailsObject?.academicYear || '0000-0000'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Application No</span>
-          <span className={styles.value}>246189267</span>
+          <span className={styles.value}>{detailsObject?.applicationNo || '000000'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Branch</span>
-          <span className={styles.value}>Kavuri hills _ 01</span>
+          <span className={styles.value}>{detailsObject?.branch || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Zone</span>
-          <span className={styles.value}>Hyderabad_Central</span>
+          <span className={styles.value}>{detailsObject?.zone || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Application Fee</span>
-          <span className={styles.value}>500</span>
+          <span className={styles.value}>{detailsObject?.applicationFee || '-'}</span>
         </div>
       </div>
     </div>
@@ -67,4 +68,4 @@ const SchoolOverviewTopSection = ({ step = 1, onBack,title,detailsObject }) => {
 }
 
 
-export default SchoolOverviewTopSection;
+export default ApplicationSaleAndConfTopSec;

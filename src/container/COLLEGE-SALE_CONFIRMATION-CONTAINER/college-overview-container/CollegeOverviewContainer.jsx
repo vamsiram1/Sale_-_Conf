@@ -11,18 +11,25 @@ import Button from "../../../widgets/Button/Button";
 import styles from "./CollegeOverviewContainer.module.css";
 import EditIcon from "../../../assets/school-sale-conf-assets/EditIcon";
 import ButtonRightArrow from "../../../assets/school-sale-conf-assets/ButtonRightArrow";
-const CollegeOverviewContainer = ({ onNext, onEdit }) => {
+import CollegeOverviewAcademicInfo from "../../../components/COLLEGE-SALE-CONFIRMATION/college-overview-info/college-overview-academic-info/CollegeOverviewAcademicInfo";
+
+const CollegeOverviewContainer = ({ onNext, onEdit, detailsObject, overviewData }) => {
   return (
     <div className={styles.container}>
-      <ApplicationSaleAndConfTopSec step={1} title="Application Confirmation" />
+      <ApplicationSaleAndConfTopSec
+        step={1}
+        title="Application Confirmation"
+        detailsObject={detailsObject}
+      />
       <div className={styles.overviewContainer}>
-        <CollegeOverviewPersonalInfo />
-        <CollegeOverviewParentInfo />
-        <CollegeOverviewSiblingInfo />
-        <CollegeOverviewOrientInfo />
-        <CollegeOverviewAddressInfo />
-        <CollegeOverviewConceInfo />
-        <CollegeOverviewConWrtAppl />
+        <CollegeOverviewPersonalInfo data={overviewData} />
+        <CollegeOverviewParentInfo data={overviewData} />
+        <CollegeOverviewSiblingInfo siblingsData={overviewData?.siblings} />
+        <CollegeOverviewOrientInfo data={overviewData} />
+        <CollegeOverviewAcademicInfo data={overviewData} />
+        <CollegeOverviewAddressInfo data={overviewData} />
+        <CollegeOverviewConceInfo concessionsData={overviewData?.concessions} />
+        <CollegeOverviewConWrtAppl data={overviewData} />
       </div>
       {/* Bottom Action Buttons */}
       <div className={styles.bottomActions}>

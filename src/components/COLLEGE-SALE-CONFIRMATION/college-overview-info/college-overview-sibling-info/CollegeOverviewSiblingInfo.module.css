@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  padding: 20px 0 0 0;
+  /* padding: 20px 0 0 0; */
 }
 
 .headerRow {
@@ -26,7 +26,7 @@
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px 0px;
+  gap: 22px 22px;
   width: 90%;
 }
 
@@ -46,4 +46,22 @@
   font-size: 14px;
   font-weight: 700;
   color: #0C0C0C;
+}
+
+.siblingSection {
+  margin-bottom: 20px;
+}
+
+.siblingNumber {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6366F1;
+  margin-bottom: 12px;
+}
+
+.noData {
+  font-size: 14px;
+  color: #82808F;
+  font-style: italic;
+  margin: 10px 0;
 }

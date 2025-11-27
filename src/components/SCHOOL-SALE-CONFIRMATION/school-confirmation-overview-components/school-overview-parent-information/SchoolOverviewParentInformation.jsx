@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./SchoolOverviewParentInformation.module.css";
-const SchoolOverviewParentInformation = () => {
+const SchoolOverviewParentInformation = ({ overviewData }) => {
   return (
     <div className={styles.wrapper}>
       {/* Title + line */}
@@ -13,12 +13,12 @@ const SchoolOverviewParentInformation = () => {
       <div className={styles.infoGrid}>
         <div className={styles.infoItem}>
           <span className={styles.label}>Father Name</span>
-          <span className={styles.value}>Anil Londonker</span>
+          <span className={styles.value}>{overviewData?.parentInfo?.fatherName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Phone Number</span>
-          <span className={styles.value}>+91-9876543210</span>
+          <span className={styles.value}>{overviewData?.parentInfo?.phoneNumber || '-'}</span>
         </div>
       </div>
     </div>

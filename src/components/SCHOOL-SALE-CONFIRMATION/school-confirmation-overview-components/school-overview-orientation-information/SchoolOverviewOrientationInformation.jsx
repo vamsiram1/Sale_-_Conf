@@ -1,7 +1,6 @@
-import React from "react";
-import styles from "./CollegeOverviewOrientInfo.module.css";
+import styles from "./SchoolOverviewOrientationInformation.module.css";
 
-const CollegeOverviewOrientInfo = ({ data }) => {
+const SchoolOverviewOrientationInformation = ({ overviewData }) => {
   return (
     <div className={styles.wrapper}>
       {/* Title + Divider */}
@@ -12,53 +11,55 @@ const CollegeOverviewOrientInfo = ({ data }) => {
 
       {/* GRID */}
       <div className={styles.infoGrid}>
-        <div className={styles.infoItem}>
-          <span className={styles.label}>Academic Year</span>
-          <span className={styles.value}>{data?.academicYearName || '-'}</span>
-        </div>
 
         <div className={styles.infoItem}>
-          <span className={styles.label}>City</span>
-          <span className={styles.value}>{data?.cityName || '-'}</span>
+          <span className={styles.label}>Academic Year</span>
+          <span className={styles.value}>{overviewData?.academicYearValue || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Branch</span>
-          <span className={styles.value}>{data?.branchName || '-'}</span>
-        </div>
-
-        <div className={styles.infoItem}>
-          <span className={styles.label}>Joining Class</span>
-          <span className={styles.value}>{data?.className || '-'}</span>
-        </div>
-
-        <div className={styles.infoItem}>
-          <span className={styles.label}>Course Name</span>
-          <span className={styles.value}>{data?.orientationName || '-'}</span>
+          <span className={styles.value}>{overviewData?.branchName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Student Type</span>
-          <span className={styles.value}>{data?.studentTypeName || '-'}</span>
+          <span className={styles.value}>{overviewData?.studentTypeName || '-'}</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Joining Class</span>
+          <span className={styles.value}>{overviewData?.joiningClassName || '-'}</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>Course Name</span>
+          <span className={styles.value}>{overviewData?.orientationName || '-'}</span>
+        </div>
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>City</span>
+          <span className={styles.value}>{overviewData?.cityName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Course Start Date</span>
-          <span className={styles.value}>{data?.orientationStartDate ? new Date(data.orientationStartDate).toLocaleDateString('en-GB') : '-'}</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Course End Date</span>
-          <span className={styles.value}>{data?.orientationEndDate ? new Date(data.orientationEndDate).toLocaleDateString('en-GB') : '-'}</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Course Fee</span>
-          <span className={styles.value}>{data?.orientationFee || '-'}</span>
+          <span className={styles.value}>-</span>
         </div>
+
       </div>
     </div>
   );
-};
+}
 
-export default CollegeOverviewOrientInfo;
+export default SchoolOverviewOrientationInformation;

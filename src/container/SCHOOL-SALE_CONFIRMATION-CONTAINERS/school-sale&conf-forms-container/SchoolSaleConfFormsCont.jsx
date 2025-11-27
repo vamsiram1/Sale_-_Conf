@@ -9,7 +9,7 @@ import SchoolSaleConfLangInfo from "../../../components/SCHOOL-SALE-CONFIRMATION
 import SchoolSaleConfConceInfo from "../../../components/SCHOOL-SALE-CONFIRMATION/school-sale-and-conformation-form/school-sale&conf-concestion-info/SchoolSaleConfConceInfo";
 import ButtonRightArrow from "../../../assets/school-sale-conf-assets/ButtonRightArrow";
 
-const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment }) => {
+const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment, detailsObject }) => {
   const [formData, setFormData] = useState({
     // Father Info
     fatherName: "",
@@ -24,13 +24,6 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment }) => {
     motherEmail: "",
     motherSector: "",
     motherOccupation: "",
-    
-    // Sibling Info
-    siblingName: "",
-    siblingRelation: "",
-    siblingClass: "",
-    siblingSchool: "",
-    siblingGender: "",
     
     // Academic Info
     orientationName: "",
@@ -56,13 +49,51 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment }) => {
     authorizedBy: "",
   });
 
+  // Separate state for siblings array
+  const [siblings, setSiblings] = useState([]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleSiblingChange = (id, field, value) => {
+    setSiblings((prev) =>
+      prev.map((sibling) =>
+        sibling.id === id ? { ...sibling, [field]: value } : sibling
+      )
+    );
+  };
+
   const handleAddSibling = () => {
-    console.log("Add another sibling");
+    const newSibling = {
+      id: Date.now(),
+      siblingName: "",
+      siblingRelation: "",
+      siblingClass: "",
+      siblingSchool: "",
+    };
+    setSiblings((prev) => [...prev, newSibling]);
+  };
+
+  const handleClearSibling = (id) => {
+    setSiblings((prev) =>
+      prev.map((sibling) =>
+        sibling.id === id
+          ? {
+              ...sibling,
+              siblingName: "",
+              siblingRelation: "",
+              siblingClass: "",
+              siblingSchool: "",
+            }
+          : sibling
+      )
+    );
+  };
+
+  const handleDeleteSibling = (id) => {
+    setSiblings((prev) => prev.filter((sibling) => sibling.id !== id));
   };
 
   const handleUploadAnnexure = () => {
@@ -78,7 +109,7 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment }) => {
 
   return (
     <div className={styles.container}>
-      <SchoolOverviewTopSection step={2} onBack={onBack} title="Application Sale & Confirmation"/>
+      <SchoolOverviewTopSection step={2} onBack={onBack} title="Application Sale & Confirmation" detailsObject={detailsObject} />
 
       <div className={styles.formContainer}>
         <SchoolSaleConfParentInfo 
@@ -87,9 +118,11 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment }) => {
         />
         
         <SchoolSaleConfSiblingInfo 
-          formData={formData} 
-          onChange={handleChange}
+          siblings={siblings}
+          onSiblingChange={handleSiblingChange}
           onAddSibling={handleAddSibling}
+          onClearSibling={handleClearSibling}
+          onDeleteSibling={handleDeleteSibling}
           onUploadAnnexure={handleUploadAnnexure}
         />
 

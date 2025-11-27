@@ -20,13 +20,13 @@
 .line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, #B6B6B6 0%, #FFFFFF00 40%);
+  background: linear-gradient(to right, #b6b6b6 0%, #ffffff00 40%);
 }
 
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px 0px;
+  gap: 22px 22px;
   width: 90%;
 }
 
@@ -38,12 +38,12 @@
 
 .label {
   font-size: 12px;
-  color: #82808F;
+  color: #82808f;
   font-weight: 400;
 }
 
 .value {
   font-size: 14px;
   font-weight: 700;
-  color: #0C0C0C;
+  color: #0c0c0c;
 }

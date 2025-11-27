@@ -1,6 +1,6 @@
 import styles from "./SchoolOverviewAddressInformation.module.css";
 
-const AddressInformationDetails = () => {
+const AddressInformationDetails = ({ overviewData }) => {
   return (
     <div className={styles.wrapper}>
       {/* Title + Divider */}
@@ -14,42 +14,48 @@ const AddressInformationDetails = () => {
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Door No</span>
-          <span className={styles.value}>A.Y 2025-2026</span>
+          <span className={styles.value}>{overviewData?.addressDetails?.doorNo || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Street</span>
-          <span className={styles.value}>Jubileehills</span>
+          <span className={styles.value}>{overviewData?.addressDetails?.street || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Landmark</span>
-          <span className={styles.value}>Days Scholar</span>
+          <span className={styles.value}>{overviewData?.addressDetails?.landmark || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Area</span>
-          <span className={styles.value}>Class 8</span>
+          <span className={styles.value}>{overviewData?.addressDetails?.area || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Pincode</span>
-          <span className={styles.value}>Icon</span>
+          <span className={styles.value}>{overviewData?.addressDetails?.pincode || '-'}</span>
+        </div>
+
+
+        <div className={styles.infoItem}>
+          <span className={styles.label}>State</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>District</span>
-          <span className={styles.value}>Hyderabad</span>
+          <span className={styles.value}>{overviewData?.addressDetails?.districtName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Mandal</span>
-          <span className={styles.value}>Jubilee Hills</span>
+          <span className={styles.value}>{overviewData?.addressDetails?.mandalName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>City</span>
-          <span className={styles.value}>Walkin</span>
+          <span className={styles.value}>{overviewData?.addressDetails?.cityName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>

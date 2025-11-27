@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CollegeOverviewAddressInfo.module.css";
 
-const CollegeOverviewAddressInfo = () => {
+const CollegeOverviewAddressInfo = ({ data }) => {
   return (
     <div className={styles.wrapper}>
       {/* Title + Divider */}
@@ -14,47 +14,52 @@ const CollegeOverviewAddressInfo = () => {
       <div className={styles.infoGrid}>
         <div className={styles.infoItem}>
           <span className={styles.label}>Door No</span>
-          <span className={styles.value}>A.Y 2025-2026</span>
+          <span className={styles.value}>{data?.doorNo || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Street</span>
-          <span className={styles.value}>Jubileehills</span>
+          <span className={styles.value}>{data?.street || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Landmark</span>
-          <span className={styles.value}>Days Scholar</span>
+          <span className={styles.value}>{data?.landmark || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Area</span>
-          <span className={styles.value}>Class 8</span>
+          <span className={styles.value}>{data?.area || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Pincode</span>
-          <span className={styles.value}>Icon</span>
+          <span className={styles.value}>{data?.pincode || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
+          <span className={styles.label}>State</span>
+          <span className={styles.value}>{data?.addressStateName || '-'}</span>
+        </div>
+        
+        <div className={styles.infoItem}>
           <span className={styles.label}>District</span>
-          <span className={styles.value}>Hyderabad</span>
+          <span className={styles.value}>{data?.addressDistrictName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Mandal</span>
-          <span className={styles.value}>Jubilee Hills</span>
+          <span className={styles.value}>{data?.addressMandalName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>City</span>
-          <span className={styles.value}>Walkin</span>
+          <span className={styles.value}>{data?.addressCityName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>G-pin</span>
-          <span className={styles.value}>-</span>
+          <span className={styles.value}>{'-'}</span>
         </div>
       </div>
     </div>
@@ -62,5 +67,3 @@ const CollegeOverviewAddressInfo = () => {
 };
 
 export default CollegeOverviewAddressInfo;
-
-

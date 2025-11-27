@@ -18,7 +18,7 @@ const CollegeOverviewConWrtAppl = () => {
         </div>
 
         <div className={styles.infoItem}>
-          <span className={styles.label}>Concession Written By</span>
+          <span className={styles.label}>Concession Referred By</span>
           <span className={styles.value}>Shashank</span>
         </div>
 

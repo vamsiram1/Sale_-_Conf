@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./SchoolOverviewOrientaionInfo.module.css";
+import styles from "./SchoolOverviewAcadameciInfo.module.css";
 
-const SchoolOverviewAcademicInfo = () => {
+const SchoolOverviewAcadameciInfo = ({ overviewData }) => {
   return (
     <div className={styles.wrapper}>
       {/* Title */}
       <div className={styles.headerRow}>
-        <span className={styles.title}>Orientation Information</span>
+        <span className={styles.title}>Academic Information</span>
         <div className={styles.line}></div>
       </div>
 
@@ -14,46 +14,46 @@ const SchoolOverviewAcademicInfo = () => {
       <div className={styles.infoGrid}>
         <div className={styles.infoItem}>
           <span className={styles.label}>Orientation Name</span>
-          <span className={styles.value}>Orientation 2024</span>
+          <span className={styles.value}>{overviewData?.orientationName || '-'}</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Orientation Fee</span>
-          <span className={styles.value}>5000.00</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Score App No</span>
-          <span className={styles.value}>SCR2024001</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Score Marks</span>
-          <span className={styles.value}>85</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Food Type</span>
-          <span className={styles.value}>Veg</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Blood Group</span>
-          <span className={styles.value}>O+</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Caste</span>
-          <span className={styles.value}>OC</span>
+          <span className={styles.value}>-</span>
         </div>
 
         <div className={styles.infoItem}>
           <span className={styles.label}>Religion</span>
-          <span className={styles.value}>Hindu</span>
+          <span className={styles.value}>-</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default SchoolOverviewAcademicInfo;
+export default SchoolOverviewAcadameciInfo;

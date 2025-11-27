@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  padding: 20px 0 0 0;
+  /* padding: 20px 0 0 0; */
 }
 
 .headerRow {
@@ -26,8 +26,7 @@
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px 0px;
-  width: 90%;
+ gap: 22px 22px;  width: 90%;
 }
 
 .infoItem {

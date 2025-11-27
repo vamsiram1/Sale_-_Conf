@@ -6,10 +6,10 @@ import Button from '../../../widgets/Button/Button';
 import ButtonRightArrow from '../../../assets/school-sale-conf-assets/ButtonRightArrow';
 import styles from './CollegeAppConfContainer.module.css';
 
-const CollegeAppConfContainer = ({ onBack, onProceedToPayment }) => {
+const CollegeAppConfContainer = ({ onBack, onProceedToPayment, detailsObject }) => {
   return (
     <div className={styles.container}>
-      <ApplicationSaleAndConfTopSec step={2} onBack={onBack}  title="Application Confirmation"/>
+      <ApplicationSaleAndConfTopSec step={2} onBack={onBack}  title="Application Confirmation"  detailsObject={detailsObject}/>
       
       <div className={styles.contentContainer}>
         <CollegeAcademicConfForms />

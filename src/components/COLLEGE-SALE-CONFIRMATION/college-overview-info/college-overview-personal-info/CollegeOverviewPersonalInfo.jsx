@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./CollegeOverviewPersonalInfo.module.css";
 
-const CollegeOverviewPersonalInfo = () => {
+const CollegeOverviewPersonalInfo = ({ data }) => {
+  console.log('🔵 CollegeOverviewPersonalInfo received data:', data);
+  
   return (
     <div className={styles.wrapper}>
       {/* LEFT: Profile Image */}
@@ -26,53 +28,43 @@ const CollegeOverviewPersonalInfo = () => {
 
         <div className={styles.infoGrid}>
           <div className={styles.infoItem}>
-            <span className={styles.label}>PRO Receipt No</span>
-            <span className={styles.value}>0</span>
-          </div>
-
-          <div className={styles.infoItem}>
             <span className={styles.label}>First Name</span>
-            <span className={styles.value}>First Name</span>
+            <span className={styles.value}>{data?.firstName || '-'}</span>
           </div>
 
           <div className={styles.infoItem}>
             <span className={styles.label}>Last Name</span>
-            <span className={styles.value}>Last Name</span>
+            <span className={styles.value}>{data?.lastName || '-'}</span>
           </div>
 
           <div className={styles.infoItem}>
             <span className={styles.label}>Gender</span>
-            <span className={styles.value}>Male</span>
+            <span className={styles.value}>{data?.genderName || '-'}</span>
           </div>
 
           <div className={styles.infoItem}>
             <span className={styles.label}>Aapar No</span>
-            <span className={styles.value}>9828e77</span>
+            <span className={styles.value}>{data?.apaarNo || '-'}</span>
           </div>
 
           <div className={styles.infoItem}>
             <span className={styles.label}>Date of Birth</span>
-            <span className={styles.value}>07-12-2004</span>
+            <span className={styles.value}>{data?.dob ? new Date(data.dob).toLocaleDateString('en-GB') : '-'}</span>
           </div>
 
           <div className={styles.infoItem}>
             <span className={styles.label}>Admission Referred by</span>
-            <span className={styles.value}>Venkat Boppana</span>
+            <span className={styles.value}>{data?.admissionReferredByName || '-'}</span>
           </div>
 
           <div className={styles.infoItem}>
             <span className={styles.label}>Quota</span>
-            <span className={styles.value}>General</span>
+            <span className={styles.value}>{data?.quotaName || '-'}</span>
           </div>
 
           <div className={styles.infoItem}>
             <span className={styles.label}>Aadhar Card No</span>
-            <span className={styles.value}>8892 2898 6273</span>
-          </div>
-
-          <div className={styles.infoItem}>
-            <span className={styles.label}>PRO Receipt No</span>
-            <span className={styles.value}>6274528362yrts729</span>
+            <span className={styles.value}>{data?.aadharNo || '-'}</span>
           </div>
         </div>
       </div>

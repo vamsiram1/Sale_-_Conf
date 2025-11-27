@@ -26,8 +26,7 @@
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px 0px;
-  width: 90%;
+ gap: 22px 22px;  width: 90%;
 }
 
 .infoItem {
@@ -46,4 +45,15 @@
   font-size: 14px;
   font-weight: 700;
   color: #0C0C0C;
+}
+
+.parentSection {
+  margin-bottom: 25px;
+}
+
+.parentTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6366F1;
+  margin: 0 0 15px 0;
 }
