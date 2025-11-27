@@ -5,6 +5,7 @@ import Button from "../../../../widgets/Button/Button";
 import styles from "./SchoolSaleConfSiblingInfo.module.css";
 import UploadIcon from "../../../../assets/school-sale-conf-assets/UploadIcon";
 import PlusIcon from "../../../../assets/school-sale-conf-assets/PlusIcon";
+import { useRelationTypes, useClasses } from "./hooks/SchoolSiblings";
 
 const SchoolSaleConfSiblingInfo = ({
   siblings,
@@ -14,19 +15,55 @@ const SchoolSaleConfSiblingInfo = ({
   onDeleteSibling,
   onUploadAnnexure,
 }) => {
-  const relationOptions = ["Brother", "Sister"];
-  const classOptions = [
-    "Class 1",
-    "Class 2",
-    "Class 3",
-    "Class 4",
-    "Class 5",
-    "Class 6",
-    "Class 7",
-    "Class 8",
-    "Class 9",
-    "Class 10",
-  ];
+  // Fetch relation types from API
+  const { relationOptions, getRelationTypeIdByName, getRelationTypeNameById, loading: relationTypesLoading } = useRelationTypes();
+  
+  // Fetch classes from API
+  const { classOptions, getClassIdByName, getClassNameById, loading: classesLoading } = useClasses();
+
+  // Handle relation type change - convert name to ID before storing
+  const handleRelationTypeChange = (siblingId) => (e) => {
+    const selectedName = e.target.value;
+    const relationTypeId = getRelationTypeIdByName(selectedName);
+    
+    // Store the ID instead of the name
+    const value = relationTypeId !== undefined ? relationTypeId : selectedName; // Fallback to name if ID not found
+    onSiblingChange(siblingId, "siblingRelation", value);
+  };
+
+  // Get display value for relation type (convert ID to name if needed)
+  const getRelationTypeDisplayValue = (relationValue) => {
+    if (!relationValue) return "";
+    // If it's already a name (string that exists in options), return it
+    if (relationOptions.includes(relationValue)) {
+      return relationValue;
+    }
+    // Otherwise, try to convert ID to name
+    const name = getRelationTypeNameById(relationValue);
+    return name || relationValue;
+  };
+
+  // Handle class change - convert name/label to ID before storing
+  const handleClassChange = (siblingId) => (e) => {
+    const selectedName = e.target.value;
+    const classId = getClassIdByName(selectedName);
+    
+    // Store the ID instead of the name
+    const value = classId !== undefined ? classId : selectedName; // Fallback to name if ID not found
+    onSiblingChange(siblingId, "siblingClass", value);
+  };
+
+  // Get display value for class (convert ID to name/label if needed)
+  const getClassDisplayValue = (classValue) => {
+    if (!classValue) return "";
+    // If it's already a name (string that exists in options), return it
+    if (classOptions.includes(classValue)) {
+      return classValue;
+    }
+    // Otherwise, try to convert ID to name
+    const name = getClassNameById(classValue);
+    return name || classValue;
+  };
 
   return (
     <div className={styles.section}>
@@ -77,21 +114,19 @@ const SchoolSaleConfSiblingInfo = ({
             <Dropdown
               dropdownname="Relation Type"
               name="siblingRelation"
-              results={relationOptions}
-              value={sibling.siblingRelation}
-              onChange={(e) =>
-                onSiblingChange(sibling.id, "siblingRelation", e.target.value)
-              }
+              results={relationTypesLoading ? [] : relationOptions}
+              value={getRelationTypeDisplayValue(sibling.siblingRelation)}
+              onChange={handleRelationTypeChange(sibling.id)}
+              disabled={relationTypesLoading}
             />
 
             <Dropdown
               dropdownname="Select Class"
               name="siblingClass"
-              results={classOptions}
-              value={sibling.siblingClass}
-              onChange={(e) =>
-                onSiblingChange(sibling.id, "siblingClass", e.target.value)
-              }
+              results={classesLoading ? [] : classOptions}
+              value={getClassDisplayValue(sibling.siblingClass)}
+              onChange={handleClassChange(sibling.id)}
+              disabled={classesLoading}
             />
           </div>
 

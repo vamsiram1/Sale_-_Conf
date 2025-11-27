@@ -3,6 +3,7 @@ import SchoolSaleOverviewCont from "../school-sale-overview-container/SchoolSale
 import SchoolSaleConfFormsCont from "../school-sale&conf-forms-container/SchoolSaleConfFormsCont";
 import PaymentPopupContainer from "../scool-payment-popup-container/PaymentPopupContainer";
 import { useAdmissionSaleData } from "../../../hooks/college-apis/CollegeOverviewApis";
+import { useSchoolOverviewData } from "../../../hooks/school-apis/SchoolOverviewApis";
 
 const SchoolSaleConfirmationContainer = () => {
   const [currentStep, setCurrentStep] = useState(1); // 1 = Overview, 2 = Forms
@@ -10,6 +11,10 @@ const SchoolSaleConfirmationContainer = () => {
 
   // Fetch data once at parent level
   const { data: detailsObject } = useAdmissionSaleData('2815502');
+  
+  // Fetch overview data to get branchId and joiningClassId
+  const studentId = "1880007"; // You can make this dynamic
+  const { overviewData } = useSchoolOverviewData(studentId);
 
   const handleNext = () => {
     setCurrentStep(2);
@@ -39,6 +44,7 @@ const SchoolSaleConfirmationContainer = () => {
             onNext={handleNext}
             onEdit={handleEdit}
             detailsObject={detailsObject}
+            studentId={studentId}
           />
         )}
         
@@ -47,6 +53,7 @@ const SchoolSaleConfirmationContainer = () => {
             onBack={handleBack}
             onProceedToPayment={handleProceedToPayment}
             detailsObject={detailsObject}
+            overviewData={overviewData}
           />
         )}
       </div>

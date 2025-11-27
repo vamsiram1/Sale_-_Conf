@@ -11,7 +11,7 @@ import EditIcon from "../../../assets/school-sale-conf-assets/EditIcon";
 import ButtonRightArrow from "../../../assets/school-sale-conf-assets/ButtonRightArrow";
 import { useSchoolOverviewData } from "../../../hooks/school-apis/SchoolOverviewApis";
 
-const SchoolSaleOverviewCont = ({ onNext, onEdit, detailsObject, studentId = "1880007" }) => {
+const SchoolSaleOverviewCont = ({ onNext, onEdit, detailsObject, studentId }) => {
   // Fetch school overview data using the custom hook
   const { overviewData, loading, error } = useSchoolOverviewData(studentId);
 

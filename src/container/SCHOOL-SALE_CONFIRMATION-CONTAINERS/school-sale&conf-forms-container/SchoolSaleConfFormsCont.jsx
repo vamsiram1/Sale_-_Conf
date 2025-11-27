@@ -9,7 +9,7 @@ import SchoolSaleConfLangInfo from "../../../components/SCHOOL-SALE-CONFIRMATION
 import SchoolSaleConfConceInfo from "../../../components/SCHOOL-SALE-CONFIRMATION/school-sale-and-conformation-form/school-sale&conf-concestion-info/SchoolSaleConfConceInfo";
 import ButtonRightArrow from "../../../assets/school-sale-conf-assets/ButtonRightArrow";
 
-const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment, detailsObject }) => {
+const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment, detailsObject, overviewData }) => {
   const [formData, setFormData] = useState({
     // Father Info
     fatherName: "",
@@ -17,6 +17,7 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment, detailsObject }) 
     fatherEmail: "",
     fatherSector: "",
     fatherOccupation: "",
+    fatherOtherOccupation: "",
     
     // Mother Info
     motherName: "",
@@ -24,6 +25,7 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment, detailsObject }) 
     motherEmail: "",
     motherSector: "",
     motherOccupation: "",
+    motherOtherOccupation: "",
     
     // Academic Info
     orientationName: "",
@@ -129,6 +131,7 @@ const SchoolSaleConfFormsCont = ({ onBack, onProceedToPayment, detailsObject }) 
         <SchoolSaleConfAcadeInfo
           formData={formData}
           onChange={handleChange}
+          overviewData={overviewData}
         />
 
         <SchoolSaleConfLangInfo

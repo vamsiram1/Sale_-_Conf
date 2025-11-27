@@ -2,13 +2,73 @@ import React, { useState } from "react";
 import Inputbox from "../../../../widgets/Inputbox/InputBox";
 import Dropdown from "../../../../widgets/Dropdown/Dropdown";
 import styles from "./CollegeConceInfoForms.module.css";
+import { useAuthorizedByList, useConcessionReasonList } from "../../../../hooks/college-apis/form-apis/ConcessionInfoApis";
 
 const CollegeConceInfoForms = () => {
   const [isChecked, setIsChecked] = useState(false);
 
+  // State to store selected values for display
+  const [selectedReferredBy, setSelectedReferredBy] = useState("");
+  const [selectedAuthorizedBy, setSelectedAuthorizedBy] = useState("");
+  const [selectedConcessionReferredBy, setSelectedConcessionReferredBy] = useState("");
+  const [selectedConcessionReason, setSelectedConcessionReason] = useState("");
+
+  // Fetch authorized by list for all three dropdowns
+  const { authorizedByList, loading, error } = useAuthorizedByList();
+
+  // Fetch concession reason list for concession reason dropdown
+  const { concessionReasonList, loading: reasonLoading, error: reasonError } = useConcessionReasonList();
+
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
   };
+
+  // Handle dropdown changes
+  const handleReferredByChange = (event) => {
+    const value = event?.target?.value || event;
+    console.log('Selected Referred By:', value);
+    setSelectedReferredBy(value);
+  };
+
+  const handleAuthorizedByChange = (event) => {
+    const value = event?.target?.value || event;
+    console.log('Selected Authorized By:', value);
+    setSelectedAuthorizedBy(value);
+  };
+
+  const handleConcessionReferredByChange = (event) => {
+    const value = event?.target?.value || event;
+    console.log('Selected Concession Referred By:', value);
+    setSelectedConcessionReferredBy(value);
+  };
+
+  const handleConcessionReasonChange = (event) => {
+    const value = event?.target?.value || event;
+    console.log('Selected Concession Reason:', value);
+    setSelectedConcessionReason(value);
+  };
+
+  console.log('Authorized By List:', authorizedByList);
+  console.log('Loading:', loading);
+  console.log('Error:', error);
+
+  console.log('Concession Reason List:', concessionReasonList);
+  console.log('Reason Loading:', reasonLoading);
+  console.log('Reason Error:', reasonError);
+
+  // Format options for dropdown - extract displayText
+  const dropdownOptions = loading 
+    ? ["Loading..."] 
+    : authorizedByList.length > 0 
+      ? authorizedByList.map(item => item.displayText)
+      : ["No data available"];
+
+  // Format options for concession reason dropdown
+  const concessionReasonOptions = reasonLoading 
+    ? ["Loading..."] 
+    : concessionReasonList.length > 0 
+      ? concessionReasonList.map(item => item.displayText)
+      : ["No data available"];
 
   return (
     <div className={styles.section}>
@@ -35,7 +95,9 @@ const CollegeConceInfoForms = () => {
         <Dropdown
           dropdownname="Referred By"
           name="referredBy"
-          results={["Select Referred By"]}
+          results={dropdownOptions}
+          onChange={handleReferredByChange}
+          value={selectedReferredBy}
         />
       </div>
 
@@ -50,13 +112,17 @@ const CollegeConceInfoForms = () => {
         <Dropdown
           dropdownname="Authorized By"
           name="authorizedBy"
-          results={["Select Authorized By"]}
+          results={dropdownOptions}
+          onChange={handleAuthorizedByChange}
+          value={selectedAuthorizedBy}
         />
 
-        <Inputbox
-          label="Concession Reason"
+        <Dropdown
+          dropdownname="Concession Reason"
           name="concessionReason"
-          placeholder="Enter Concession Reason"
+          results={concessionReasonOptions}
+          onChange={handleConcessionReasonChange}
+          value={selectedConcessionReason}
         />
       </div>
 
@@ -86,7 +152,9 @@ const CollegeConceInfoForms = () => {
           <Dropdown
             dropdownname="Concession Referred By"
             name="concessionReferredBy"
-            results={["Select Concession Referred By"]}
+            results={dropdownOptions}
+            onChange={handleConcessionReferredByChange}
+            value={selectedConcessionReferredBy}
           />
 
           <Inputbox

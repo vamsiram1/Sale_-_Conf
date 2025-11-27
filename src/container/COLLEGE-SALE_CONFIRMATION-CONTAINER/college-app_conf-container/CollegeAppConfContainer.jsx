@@ -1,5 +1,5 @@
 import React from 'react';
-import CollegeAcademicConfForms from '../../../components/COLLEGE-SALE-CONFIRMATION/college-application-conf/college-academic-conf/CollegeAcademicConfForms';
+import CollegeAcademicConfForms from '../../../components/COLLEGE-SALE-CONFIRMATION/college-application-conf/college-academic-conf/CollegeOrientInfoForms.jsx';
 import CollegeConceInfoForms from '../../../components/COLLEGE-SALE-CONFIRMATION/college-application-conf/college-conce-info-forms/CollegeConceInfoForms';
 import ApplicationSaleAndConfTopSec from '../../../widgets/ApplicationSaleAndConTopSection/ApplicationSaleAndConfTopSec';
 import Button from '../../../widgets/Button/Button';
